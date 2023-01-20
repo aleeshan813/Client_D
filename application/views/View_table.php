@@ -38,7 +38,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="<?php echo base_url();?>index.php/Main/index" class="logo d-flex align-items-center">
+      <a href="<?php echo base_url();?>index.php/Main/dashboard" class="logo d-flex align-items-center">
         <img src="<?php echo base_url();?>assets/img/apple-touch-icon-2.png" alt="">
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -51,7 +51,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>index.php/Main/index">
+        <a class="nav-link" href="<?php echo base_url();?>index.php/Main/dashboard">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -80,7 +80,7 @@
       <h1>Client Details</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="<?php echo base_url();?>index.php/Main/index">Home</a></li>
+          <li class="breadcrumb-item"><a href="<?php echo base_url();?>index.php/Main/dashboard">Home</a></li>
           <li class="breadcrumb-item">Client Details</li> 
         </ol>
       </nav>

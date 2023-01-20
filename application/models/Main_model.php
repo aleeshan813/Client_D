@@ -7,6 +7,14 @@
             parent::__construct();
             $this->load->database();
         }
+// login when email and password equal
+        function can_login($Email,$Password)
+        {
+            $this->db->where('email',$Email);
+            $this->db->where('password',$Password);
+            $Query = $this->db->get('tb_login');
+            return $Query;
+        }
 
 /** Insert Client Details to the database table 'tb_client_details'*/
         function insert($Data)

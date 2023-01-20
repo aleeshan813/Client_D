@@ -18,8 +18,39 @@ class Main extends CI_Controller {
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
 
-/**load index page of the dashboard and fetch client details */
+
+	public function admin_login()
+	{
+		$this->form_validation->set_rules('email','Email','required');
+		$this->form_validation->set_rules('password','Password','required');
+
+		 if($this->form_validation->run())
+		 {
+			$Email = $this->input->post('email');
+			$Password = $this->input->post('password');
+			$this->load->model('main_model');
+			$val = $this->main_model->can_login($Email,$Password);
+
+			if($val->num_rows()>0)
+			{
+				$this->dashboard();
+			}
+			else
+			{
+				$this->session->set_flashdata('status','Invalied username or password !');
+
+				redirect(base_url('index.php/main/login_page'));
+			}
+		 }
+	}
 	public function index()
+	{
+		$this->load->view('admin_login');	
+	}
+
+/**load index page of the dashboard and fetch client details */
+
+	public function dashboard()
 	{
 		$this->load->model('main_model');	
 
@@ -346,7 +377,7 @@ class Main extends CI_Controller {
 				);
 				$Query = $this->db->where('id',$id);
 				$this->db->update('tb_client_details',$data);
-				redirect(base_url('index.php/main/index'));
+				redirect(base_url('index.php/main/dashboard'));
 	}
 			}
 		}

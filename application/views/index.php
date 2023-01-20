@@ -122,8 +122,12 @@
           ?>
 
           </ul><!-- End Notification of domain_expiring date -->
+          <li class="nav-item dropdown pe-3">
 
-      </ul>
+            <a class=" btn btn-danger nav-profile d-flex align-items-center" href="<?php echo base_url();?>">
+              <span>Sign Out</span>
+            </a><!-- End Profile Iamge Icon -->
+
     </nav><!-- End Icons Navigation -->
 
   </header><!-- End Header -->
@@ -134,7 +138,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="<?php echo base_url();?>index.php/Main/index">
+        <a class="nav-link " href="<?php echo base_url();?>index.php/Main/dashboard">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -163,7 +167,7 @@
       <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="<?php echo base_url();?>index.php/Main/dashboard">Home</a></li>
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
       </nav>

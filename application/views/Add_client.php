@@ -42,7 +42,7 @@
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="<?php echo base_url();?>index.php/Main/index" class="logo d-flex align-items-center w-auto">
+                <a href="<?php echo base_url();?>index.php/Main/dashboard" class="logo d-flex align-items-center w-auto">
                   <img src="<?php echo base_url()?>assets/img/apple-touch-icon-2.png" alt="">
                 </a>
               </div><!-- End Logo -->
@@ -51,7 +51,7 @@
 
                 <div class="p-1">
                   <a href="<?php echo base_url();?>index.php/main/view_table"><img src="<?php echo base_url();?>assets/img/back-icon.png" alt="back" style="width: auto; height: 20px;"></a>
-              </div>
+                </div>
 
                 <div class="card-body">
                  

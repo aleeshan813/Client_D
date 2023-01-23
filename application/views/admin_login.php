@@ -39,32 +39,34 @@
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign in</p>
+                <div>
+                      <?php if($this->uri->segment(2) == 'invalied_user_pwd')
+                      {
+                      ?>
+                        <div class="alert alert-danger d-flex justify-content-between">
+                           <?php echo '<p>Invalied Username or Password !</p>';?>
+                              <a class="btn-close w-30 p-2" href="<?php echo base_url();?>index.php/main/admin_login"></a>
+                        </div>
+                      <?php
+                        }
+                      ?>
+                  </div>
 
-                <form class="mx-1 mx-md-4" method="post" action="<?php echo base_url();?>index.php/main/admin_login">
+                <form class="mx-1 mx-md-4" method="post" action="<?php echo base_url();?>index.php/main/admin_logins">
 
                   <div class="d-flex flex-row align-items-center mb-4">
-                    <div>
-                        <?php if($this->session->flashdata('status')): ?>
-                            <div class="alert alert-danger d-flex justify-content-between">
-                            <?= $this->session->flashdata('status');?>
-                            <a class="btn-close w-30 p-2" href="<?php echo base_url();?>index.php/main/login_page"></a>
-                            </div>
-                        <?php endif; ?>
-                    </div>
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" name="email" class="form-control" />
+                      <input type="email" name="email" class="form-control" required/>
                       <label class="form-label" for="form3Example3c">Your Email</label>
-                      <span class="text-danger"><?php echo form_error('email');?></span>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" name="password" class="form-control" />
+                      <input type="password" name="password" class="form-control" required/>
                       <label class="form-label" for="form3Example4c">Password</label>
-                      <span class="text-danger"><?php echo form_error('password');?></span>
                     </div>
                   </div>
 

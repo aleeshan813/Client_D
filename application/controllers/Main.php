@@ -21,11 +21,10 @@ class Main extends CI_Controller {
 
 	public function admin_login()
 	{
-		$this->form_validation->set_rules('email','Email','required');
-		$this->form_validation->set_rules('password','Password','required');
-
-		 if($this->form_validation->run())
-		 {
+		$this->load->view('admin_login');
+	}
+	public function admin_logins()
+	{
 			$Email = $this->input->post('email');
 			$Password = $this->input->post('password');
 			$this->load->model('main_model');
@@ -39,13 +38,16 @@ class Main extends CI_Controller {
 			{
 				$this->session->set_flashdata('status','Invalied username or password !');
 
-				redirect(base_url('index.php/main/login_page'));
+				redirect(base_url('index.php/main/invalied_user_pwd'));
 			}
-		 }
+	}
+	public function invalied_user_pwd()
+	{
+		$this->admin_login();
 	}
 	public function index()
 	{
-		$this->load->view('admin_login');	
+		redirect(base_url('index.php/main/admin_login'));	
 	}
 
 /**load index page of the dashboard and fetch client details */

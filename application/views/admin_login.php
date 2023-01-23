@@ -40,15 +40,15 @@
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign in</p>
                 <div>
-                      <?php if($this->uri->segment(2) == 'invalied_user_pwd')
+                    <?php if($this->uri->segment(2) == 'invalied_user_pwd')
                       {
                       ?>
                         <div class="alert alert-danger d-flex justify-content-between">
                            <?php echo '<p>Invalied Username or Password !</p>';?>
-                              <a class="btn-close w-30 p-2" href="<?php echo base_url();?>index.php/main/admin_login"></a>
+                             <a class="btn-close w-30 p-2" href="<?php echo base_url();?>index.php/main/admin_login"></a>
                         </div>
-                      <?php
-                        }
+                    <?php
+                      }
                       ?>
                   </div>
 
